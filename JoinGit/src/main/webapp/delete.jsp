@@ -22,7 +22,7 @@
 	 	final String DRIVER = "com.mysql.cj.jdbc.Driver";
 		final String DBURL = "jdbc:mysql://localhost:3306/db01";
 		final String DBID = "root";
-		final String DBPW = "9990";
+		final String DBPW = "Password@";
 	     
 	     // 1 드라이버 로드
 	     Class.forName(DRIVER);
@@ -37,12 +37,15 @@
 	     
 	     PreparedStatement pstmt = con.prepareStatement(sql);
 	     pstmt.setString(1, id);
+	     int result = pstmt.executeUpdate();
+	     System.out.println(result);
+	     System.out.println(id);
 	     
 	     // 4 sql 실행
 	     pstmt.executeUpdate();
 	     
-	     System.out.println(" 삭제 완료 성공! ");     
 	  
 	  %>
+	  <h1><%=id %> 삭제되었습니다</h1>
 </body>
 </html>
