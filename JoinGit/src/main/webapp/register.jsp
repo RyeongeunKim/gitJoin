@@ -14,9 +14,9 @@
  		String id = request.getParameter("id");
 		String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
 		out.println(1);
-		String DB_URL = "jdbc:mysql://localhost:3306/db03?useSSL=false";
+		String DB_URL = "jdbc:mysql://localhost:3306/db01?useSSL=false";
 		String USERNAME = "root";
-		String PASSWORD = "1234";
+		String PASSWORD = "Password@";
 		
 		Connection conn = null;
 		Statement stmt = null;
