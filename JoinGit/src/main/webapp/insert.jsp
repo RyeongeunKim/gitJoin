@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form method="post" action="register">
+	<form method="post" action="register.jsp">
 	    <fieldset>
 	        <legend>회원가입</legend>
 	        아이디 : <br>
