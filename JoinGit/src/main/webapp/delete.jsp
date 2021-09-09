@@ -20,9 +20,9 @@
 	     String id = request.getParameter("id");
 	     
 	 	final String DRIVER = "com.mysql.cj.jdbc.Driver";
-		final String DBURL = "jdbc:mysql://localhost:3306/db01";
+		final String DBURL = "jdbc:mysql://localhost:3306/db03";
 		final String DBID = "root";
-		final String DBPW = "Password@";
+		final String DBPW = "1234";
 	     
 	     // 1 드라이버 로드
 	     Class.forName(DRIVER);

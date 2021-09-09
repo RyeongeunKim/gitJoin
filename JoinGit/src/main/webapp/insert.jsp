@@ -1,19 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	<form method="post" action="register.jsp">
 	    <fieldset>
-	        <legend>È¸¿ø°¡ÀÔ</legend>
-	        ¾ÆÀÌµğ : <br>
+	        <legend>íšŒì›ê°€ì…</legend>
+	        ì•„ì´ë”” : <br>
 	        <input type="text" name="id" value="id"><br>
-			<input type="submit" value="°¡ÀÔ">
-			<input type="reset" value="Ãë¼Ò">
+			<input type="submit" value="ê°€ì…">
+			<input type="reset" value="ì·¨ì†Œ">
 	    </fieldset>
 	</form>
 </body>

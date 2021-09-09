@@ -9,14 +9,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%= request.getParameter("id")%>
+<% request.setCharacterEncoding("UTF-8"); %>
+<%=  request.getParameter("id")%>
+
 <%
  		String id = request.getParameter("id");
 		String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-		out.println(1);
-		String DB_URL = "jdbc:mysql://localhost:3306/db01?useSSL=false";
+		String DB_URL = "jdbc:mysql://localhost:3306/db03?useSSL=false";
 		String USERNAME = "root";
-		String PASSWORD = "Password@";
+		String PASSWORD = "1234";
 		
 		Connection conn = null;
 		Statement stmt = null;

@@ -40,25 +40,22 @@
 		    	PreparedStatement pstmt = con.prepareStatement(name1);
 				ResultSet rs = pstmt.executeQuery();
 				
-				
-				List memberList = new ArrayList();
-				
-				while(rs.next()) {
-						String Fullname = rs.getString(1);
-						System.out.println(Fullname);
-						memberList.add(Fullname);
-				}
 				%>
+				
+				<h1>데이터베이스 출력합니다.</h1>
 				<table border="1">
 				<%
-				for(int i=0; i<memberList.size(); i++){
+				while(rs.next()) {
+					String id = rs.getString(1);
 				%>
 					<tr>
-					<td><%= memberList.get(i)%></td>
-					<td><a href="delete.jsp?id=<%=memberList.get(i) %>">삭제</a></td>
-					<td><a href="update.jsp?id=<%=memberList.get(i) %>">수정</a></td>
+					<td><%= id%></td>
+					<td><a href="delete.jsp?id=<%= id%>">삭제</a></td>
+					<td><a href="update.jsp?id=<%= id%>">수정</a></td>	
 					</tr>
-				<% }%>
+				<% 
+				}
+				%>
 				</table>
 		
 		
