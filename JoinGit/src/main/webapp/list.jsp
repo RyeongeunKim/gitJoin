@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>회원목록</title>
 </head>
 <body>
 	  <%
@@ -28,8 +28,7 @@
 	     Class.forName(DRIVER);
 	     System.out.println(" 드라이버 로드 성공! ");
 	     // 2 디비연결
-	     Connection con =
-	     DriverManager.getConnection(DBURL, DBID, DBPW);
+	     Connection con = DriverManager.getConnection(DBURL, DBID, DBPW);
 	     System.out.println(" 디비 연결 성공! ");
 	     // 3 sql 작성 & pstmt 객체생성
 	     
@@ -37,8 +36,8 @@
 	     String name1 = "select * from table02;";
 	     
 			try {
-		    	PreparedStatement pstmt = con.prepareStatement(name1);
-				ResultSet rs = pstmt.executeQuery();
+		    	PreparedStatement pstmt = con.prepareStatement(name1); //DB로 SQL문을 요청하기 위해 생성하는 객체
+				ResultSet rs = pstmt.executeQuery(); //executeQuery( ) 메소드에서 실행된 select 문의 결과값을 가지고 있는 객체
 				
 				
 				List memberList = new ArrayList();
@@ -60,22 +59,7 @@
 					</tr>
 				<% }%>
 				</table>
-		
-		
-<!-- 			<table border="1" width="200"> -->
-<!-- 			<tr> -->
-<%-- 				<td><%=1 %></td> <!-- 그냥 1넣었을때랑 다르다 변수를 넣을수 있으니 --> --%>
-<%-- 				<td><%=Fullname%></td> --%>
-<!-- 			</tr> -->
-<!-- 			<tr> -->
-<%-- 				<td><%=2 %></td>  --%>
-<%-- 				<td><%="코끼리" %></td> --%>
-<!-- 			</tr> -->
-<!-- 			<tr> -->
-<%-- 				<td><%=3 %></td>  --%>
-<%-- 				<td><%="독수리" %></td> --%>
-<!-- 			</tr> -->
-<!-- 		</table> -->
+
 		<% 		
 				
 			} catch (SQLException e) {
