@@ -1,48 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-   <%@ page import="java.sql.*" %>
-   <%@ page import="java.io.*" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<h1><%= request.getParameter("id")%>�� ������ �Ϸ�Ǿ����ϴ�.</h1>
-<%
- 		String id = request.getParameter("id");
-		String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-		//out.println(1);
-		String DB_URL = "jdbc:mysql://localhost:3306/db01?useSSL=false";
-		String USERNAME = "root";
-		String PASSWORD = "9990";
-		
-		Connection conn = null;
-		Statement stmt = null;
-		ResultSet rs = null;
-		
-		try {
-			while(true) {
-			Class.forName(JDBC_DRIVER);
- 			
-			conn = DriverManager.getConnection(DB_URL,USERNAME,PASSWORD);
-			stmt = conn.createStatement();
-			String ins = "INSERT INTO table02 values('" + id + "');";
-			stmt.executeUpdate(ins);
-			stmt.close();
-			conn.close();
-			break;
+   <form action="registerPro.jsp" method="post" name="fr">
+        아이디 : <input type="text" name="id" value=""><br>
+        <button onclick="winopen();" type="button" >중복체크</button><br>
+        비밀번호 : <input type="password" name="pass" value="pw"><br>
+        이름 : <input type="text" name="name" value="namee"><br>
+        전화번호 : <input type="text" name="tel" value="telll"><br>
+        이메일 : <input type="text" name="email" value="emailll"><br>
+        성별 : <input type="text" name="gender" value="gendereee"><br>
+        <input type="submit" value="가입하기">   
+   </form>
+
+	<script>
+		// 아이디중복체크
+		function winopen(){
+			//새창을 열어서 페이지 오픈 후 아이디 정보를 가지고 중복체크
+			//아이디가 없으면 알림창과 진행 x
+			if(document.fr.id.value == "" || document.fr.id.value.length < 0){
+				alert("아이디를 먼저 입력해주세요")
+				document.fr.id.focus();
+			}else{
+				window.open("idcheck.jsp?id="+document.fr.id.value,"",
+						"width=300,height=50,left=120, top=120, location=no");
 			}
-		}catch (ClassNotFoundException e) { 
-			System.out.println("Class Not Found Exection"); 
-			e.printStackTrace(); 
-
-		}catch (SQLException e) {
-			System.out.println("SQL Exception : " + e.getMessage()); e.printStackTrace(); 
 		}
-%>
-
-
+	</script>
 </body>
 </html>
